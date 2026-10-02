@@ -81,8 +81,8 @@ h1, h2, h3 { font-family: "Montserrat", sans-serif; line-height: 1.2; color: var
 .hero__stats { list-style: none; display: flex; gap: 40px; margin-top: 40px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.2); }
 .hero__stats li { font-size: .95rem; opacity: .9; }
 .hero__stats strong { display: block; font-family: "Montserrat", sans-serif; font-size: 2.2rem; color: #9be3a6; line-height: 1.1; }
-/* Collage de fotos reales + tarjeta de confianza */
-.hero__media { position: relative; padding: 0 0 36px 24px; }
+/* Collage de fotos reales */
+.hero__media { position: relative; }
 .collage {
   display: grid;
   grid-template-columns: 1.6fr 1fr;
@@ -103,22 +103,6 @@ h1, h2, h3 { font-family: "Montserrat", sans-serif; line-height: 1.2; color: var
   padding: 36px 16px 12px; color: #fff; font-size: .85rem; font-weight: 600; letter-spacing: .3px;
   background: linear-gradient(transparent, rgba(10,26,69,.85));
 }
-
-.trust-card {
-  position: absolute; left: 0; bottom: 0; z-index: 2;
-  width: min(320px, 85%);
-  background: #fff; color: var(--texto);
-  border-radius: var(--radio);
-  border-top: 4px solid var(--verde);
-  padding: 18px 20px;
-  box-shadow: 0 20px 40px rgba(0,0,0,.28);
-}
-.trust-card__head { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
-.trust-card__head p { font-family: "Montserrat", sans-serif; font-weight: 700; color: var(--azul-oscuro); font-size: .95rem; }
-.trust-card__icon { width: 26px; height: 26px; color: var(--verde); flex-shrink: 0; }
-.trust-card__clients { font-size: .82rem; color: var(--gris); line-height: 1.55; }
-.trust-card__link { display: inline-block; margin-top: 10px; font-size: .82rem; font-weight: 700; color: var(--azul); text-decoration: none; }
-.trust-card__link:hover { color: var(--verde); }
 
 @media (prefers-reduced-motion: reduce) {
   .slides img { transition: none; }
@@ -220,8 +204,6 @@ h1, h2, h3 { font-family: "Montserrat", sans-serif; line-height: 1.2; color: var
   .nav .btn--small { width: auto; margin: 10px 0 16px; }
   .split, .two-col, .hero__grid { grid-template-columns: 1fr; gap: 32px; }
   .hero { padding: 48px 0 56px; }
-  .hero__media { padding: 0; }
-  .trust-card { position: static; width: auto; margin-top: 16px; }
   .section { padding: 64px 0; }
   .brand__text small { display: none; }
 }
