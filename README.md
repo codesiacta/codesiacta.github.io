@@ -26,6 +26,7 @@ git push
 
 ## Pendientes
 
-- Las imágenes y PDFs todavía se cargan desde los servidores de Wix. Conviene descargarlas a `img/` y `docs/` antes de cancelar Wix.
-- El botón "Certificado de cumplimiento" no tenía enlace en Wix: falta agregar el PDF.
-- Agregar los cargos de cada integrante del equipo.
+- Las fotos de obras (`img/`) salen del Portafolio 2026 y los PDF del RTE están en `docs/`.
+- El logo, las fotos del equipo y los logos de clientes todavía se cargan desde Wix. Conviene descargarlos a `img/` antes de cancelar Wix.
+- El botón "Certificado de cumplimiento" no tiene PDF todavía: agregarlo a `docs/` y enlazarlo en `index.html`.
+- Las fotos del portafolio son de baja resolución (300–900 px). Si existen los originales, reemplazarlos en `img/` con el mismo nombre.
