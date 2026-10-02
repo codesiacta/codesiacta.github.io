@@ -297,13 +297,20 @@
             <li><strong>WhatsApp:</strong> <a href="https://wa.me/573168741612" target="_blank" rel="noopener">Escríbenos</a></li>
           </ul>
         </div>
-        <form class="form" id="contactForm">
-          <label>Nombre<input type="text" name="nombre" required></label>
+        <!-- El formulario se envía con FormSubmit (https://formsubmit.co) y llega a codesiacta@gmail.com -->
+        <form class="form" id="contactForm" action="https://formsubmit.co/codesiacta@gmail.com" method="POST">
+          <div class="form__ok" id="formOk" hidden>✅ ¡Gracias! Recibimos tu mensaje y te responderemos pronto.</div>
+          <label>Nombre<input type="text" name="Nombre" required></label>
           <label>Email<input type="email" name="email" required></label>
-          <label>Asunto<input type="text" name="asunto"></label>
-          <label>Mensaje<textarea name="mensaje" rows="5" required></textarea></label>
-          <button type="submit" class="btn">Enviar</button>
-          <p class="form__note">Al enviar se abrirá tu programa de correo con el mensaje listo.</p>
+          <label>Teléfono<input type="tel" name="Teléfono"></label>
+          <label>Asunto<input type="text" name="Asunto"></label>
+          <label>Mensaje<textarea name="Mensaje" rows="5" required></textarea></label>
+          <input type="hidden" name="_subject" value="Nuevo mensaje desde la página web de CODESIA">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_next" id="formNext">
+          <input type="text" name="_honey" class="form__honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <button type="submit" class="btn">Enviar mensaje</button>
+          <p class="form__note">Tu mensaje llegará directamente a codesiacta@gmail.com.</p>
         </form>
       </div>
     </section>

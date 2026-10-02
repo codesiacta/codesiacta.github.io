@@ -184,6 +184,8 @@ h1, h2, h3 { font-family: "Montserrat", sans-serif; line-height: 1.2; color: var
 }
 .form input:focus, .form textarea:focus { outline: 2px solid var(--verde); border-color: transparent; }
 .form__note { font-size: .8rem; color: var(--gris); }
+.form__ok { background: var(--verde-claro); color: #1f6b2a; border-radius: 8px; padding: 12px 14px; font-weight: 600; }
+.form__honey { position: absolute; left: -9999px; }
 
 /* ===== Pie ===== */
 .footer { background: #0a1a45; color: #b9c3dc; padding: 28px 0; font-size: .9rem; }

@@ -32,15 +32,10 @@ if (slides.length > 1 && !reducirMovimiento) {
 // Año actual en el pie de página
 document.getElementById("year").textContent = new Date().getFullYear();
 
-// Formulario de contacto: abre el correo del visitante con el mensaje listo
-document.getElementById("contactForm").addEventListener("submit", (e) => {
-  e.preventDefault();
-  const datos = new FormData(e.target);
-  const asunto = datos.get("asunto") || "Contacto desde la página web";
-  const cuerpo =
-    `Nombre: ${datos.get("nombre")}\n` +
-    `Email: ${datos.get("email")}\n\n` +
-    `${datos.get("mensaje")}`;
-  window.location.href =
-    `mailto:codesiacta@gmail.com?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(cuerpo)}`;
-});
+// Formulario de contacto (FormSubmit): después de enviar, vuelve a esta página con ?enviado=1
+document.getElementById("formNext").value =
+  location.origin + location.pathname + "?enviado=1#contacto";
+
+if (new URLSearchParams(location.search).has("enviado")) {
+  document.getElementById("formOk").hidden = false;
+}
