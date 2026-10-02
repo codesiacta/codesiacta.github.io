@@ -56,7 +56,120 @@
           </ul>
         </div>
         <figure class="hero__media">
-          <img src="img/hero-edificio.jpg" alt="Edificación construida por CODESIA C.T.A." width="564" height="407">
+          <!-- Ilustración animada: paisaje del Huila con canal de riego, puente y grúa construyendo un edificio -->
+          <svg class="scene" viewBox="0 0 560 420" role="img" aria-labelledby="sceneTitle">
+            <title id="sceneTitle">Ilustración: CODESIA construye edificaciones, puentes y distritos de riego en el Huila</title>
+            <defs>
+              <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#bfe0ff"/>
+                <stop offset="1" stop-color="#eef7ff"/>
+              </linearGradient>
+              <linearGradient id="water" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#2f7fd1"/>
+                <stop offset="1" stop-color="#4fa3f0"/>
+              </linearGradient>
+              <clipPath id="card"><rect width="560" height="420" rx="18"/></clipPath>
+            </defs>
+            <g clip-path="url(#card)">
+              <!-- Cielo y sol -->
+              <rect width="560" height="420" fill="url(#sky)"/>
+              <circle class="sun-glow" cx="470" cy="78" r="52" fill="#ffd25a" opacity=".25"/>
+              <circle cx="470" cy="78" r="32" fill="#ffd25a"/>
+
+              <!-- Nubes -->
+              <g class="cloud cloud--a" fill="#fff">
+                <ellipse cx="90" cy="70" rx="38" ry="14"/><ellipse cx="112" cy="60" rx="24" ry="16"/><ellipse cx="74" cy="62" rx="18" ry="12"/>
+              </g>
+              <g class="cloud cloud--b" fill="#fff" opacity=".85">
+                <ellipse cx="300" cy="44" rx="30" ry="10"/><ellipse cx="318" cy="36" rx="18" ry="12"/>
+              </g>
+
+              <!-- Cordillera -->
+              <path d="M0 238 L60 186 L118 222 L200 150 L278 214 L350 168 L420 220 L500 176 L560 206 V420 H0Z" fill="#9dbfe3"/>
+              <path d="M200 150 L222 169 L208 166 L196 176 L186 163Z M500 176 L516 190 L504 188 L494 194 L488 186Z" fill="#fff" opacity=".8"/>
+              <path d="M0 276 L80 236 L160 262 L250 228 L340 258 L430 232 L560 268 V420 H0Z" fill="#6fb07c"/>
+
+              <!-- Terreno -->
+              <path d="M0 300 Q140 284 280 296 T560 292 V420 H0Z" fill="#4c9a5a"/>
+
+              <!-- Cultivos con surcos (distrito de riego) -->
+              <g stroke="#3d8a4b" stroke-width="3" stroke-linecap="round">
+                <path d="M20 326 L170 316"/><path d="M14 340 L176 329"/><path d="M8 354 L182 342"/>
+              </g>
+              <g fill="#7bc77f">
+                <circle cx="40" cy="322" r="4"/><circle cx="70" cy="320" r="4"/><circle cx="100" cy="318" r="4"/><circle cx="130" cy="316" r="4"/><circle cx="160" cy="314" r="4"/>
+                <circle cx="34" cy="336" r="4"/><circle cx="66" cy="334" r="4"/><circle cx="98" cy="332" r="4"/><circle cx="130" cy="330" r="4"/><circle cx="162" cy="327" r="4"/>
+              </g>
+
+              <!-- Árboles -->
+              <g>
+                <rect x="208" y="282" width="4" height="16" fill="#6b4f2a"/><circle cx="210" cy="276" r="12" fill="#2e7d3b"/>
+                <rect x="228" y="288" width="4" height="12" fill="#6b4f2a"/><circle cx="230" cy="283" r="9" fill="#37924a"/>
+                <rect x="520" y="280" width="4" height="16" fill="#6b4f2a"/><circle cx="522" cy="274" r="12" fill="#2e7d3b"/>
+              </g>
+
+              <!-- Canal de riego con agua en movimiento -->
+              <path d="M-10 388 C120 362 220 404 340 378 S500 352 570 366" fill="none" stroke="#c9b48a" stroke-width="22" stroke-linecap="round"/>
+              <path d="M-10 388 C120 362 220 404 340 378 S500 352 570 366" fill="none" stroke="url(#water)" stroke-width="14" stroke-linecap="round"/>
+              <path class="flow" d="M-10 388 C120 362 220 404 340 378 S500 352 570 366" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" opacity=".75"/>
+
+              <!-- Puente sobre el canal -->
+              <g transform="translate(0 18)">
+                <path d="M92 366 Q128 340 164 366" fill="none" stroke="#1b3f94" stroke-width="5"/>
+                <rect x="84" y="350" width="88" height="7" rx="2" fill="#0f2560"/>
+                <g stroke="#1b3f94" stroke-width="2"><path d="M108 351 V358"/><path d="M128 351 V350"/><path d="M148 351 V358"/></g>
+              </g>
+
+              <!-- Edificio en construcción -->
+              <g>
+                <rect x="256" y="268" width="120" height="34" fill="#f1f3f7"/>
+                <rect x="256" y="234" width="120" height="34" fill="#e4e8ef"/>
+                <rect x="256" y="268" width="26" height="34" fill="#f2c230"/>
+                <g fill="#2f6fd1" opacity=".85">
+                  <rect x="292" y="276" width="16" height="14" rx="2"/><rect x="318" y="276" width="16" height="14" rx="2"/><rect x="344" y="276" width="16" height="14" rx="2"/>
+                  <rect x="266" y="242" width="16" height="14" rx="2"/><rect x="292" y="242" width="16" height="14" rx="2"/><rect x="318" y="242" width="16" height="14" rx="2"/><rect x="344" y="242" width="16" height="14" rx="2"/>
+                </g>
+                <rect x="250" y="230" width="132" height="5" fill="#0f2560"/>
+                <!-- Último piso: estructura -->
+                <g stroke="#0f2560" stroke-width="4">
+                  <path d="M258 230 V202"/><path d="M296 230 V202"/><path d="M336 230 V202"/><path d="M374 230 V202"/>
+                </g>
+                <path d="M258 216 L296 216" stroke="#0f2560" stroke-width="2" stroke-dasharray="4 3"/>
+                <rect x="252" y="298" width="128" height="6" fill="#9aa3b2"/>
+              </g>
+
+              <!-- Grúa torre -->
+              <g>
+                <g stroke="#f2a900" stroke-width="3" fill="none">
+                  <path d="M430 300 V110"/><path d="M446 300 V110"/>
+                  <path d="M430 290 L446 270 L430 250 L446 230 L430 210 L446 190 L430 170 L446 150 L430 130 L446 112"/>
+                </g>
+                <path d="M438 110 L438 80" stroke="#f2a900" stroke-width="4"/>
+                <path d="M438 82 L292 106 M438 82 L516 106" stroke="#0f2560" stroke-width="1.5"/>
+                <rect x="286" y="104" width="232" height="8" rx="2" fill="#f2a900"/>
+                <rect x="498" y="112" width="22" height="18" rx="2" fill="#0f2560"/>
+                <rect x="420" y="112" width="20" height="16" rx="3" fill="#1b3f94"/>
+                <rect x="424" y="115" width="10" height="7" rx="1" fill="#bfe0ff"/>
+                <circle class="beacon" cx="438" cy="78" r="4" fill="#e63946"/>
+                <rect x="424" y="298" width="28" height="6" fill="#0f2560"/>
+                <!-- Carro, cable y viga que baja al último piso -->
+                <rect x="308" y="112" width="16" height="6" rx="1" fill="#0f2560"/>
+                <rect class="cable" x="315" y="118" width="2" height="22" fill="#0f2560"/>
+                <g class="load">
+                  <path d="M316 140 L298 152 M316 140 L334 152" stroke="#0f2560" stroke-width="1.5"/>
+                  <rect x="284" y="152" width="64" height="9" rx="1.5" fill="#2e9e3e"/>
+                  <path d="M290 156.5 H342" stroke="#1f7a2c" stroke-width="1.5" stroke-dasharray="4 4"/>
+                </g>
+              </g>
+
+              <!-- Sello -->
+              <g transform="translate(18 18)">
+                <rect width="152" height="30" rx="15" fill="#0f2560" opacity=".88"/>
+                <circle cx="16" cy="15" r="5" fill="#2e9e3e"/>
+                <text x="28" y="20" fill="#fff" font-family="Montserrat, sans-serif" font-size="12" font-weight="700">Huila · desde 1993</text>
+              </g>
+            </g>
+          </svg>
         </figure>
       </div>
     </section>
