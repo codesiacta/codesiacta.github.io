@@ -14,6 +14,21 @@ nav.querySelectorAll("a").forEach((link) =>
   })
 );
 
+// Fotos de la portada: cambian cada 5 segundos con transición suave
+const slides = document.querySelectorAll(".slides img");
+const caption = document.querySelector(".slides__caption");
+const reducirMovimiento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+if (slides.length > 1 && !reducirMovimiento) {
+  let actual = 0;
+  setInterval(() => {
+    slides[actual].classList.remove("is-active");
+    actual = (actual + 1) % slides.length;
+    slides[actual].classList.add("is-active");
+    caption.textContent = slides[actual].dataset.caption;
+  }, 5000);
+}
+
 // Año actual en el pie de página
 document.getElementById("year").textContent = new Date().getFullYear();
 
