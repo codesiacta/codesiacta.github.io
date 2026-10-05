@@ -29,6 +29,70 @@ if (slides.length > 1 && !reducirMovimiento) {
   }, 5000);
 }
 
+// Equipo: el panal hexagonal elige quién aparece en el panel destacado
+const crew = document.querySelector(".crew");
+if (crew) {
+  const hexes = [...crew.querySelectorAll(".hex")];
+  const spot = crew.querySelector(".crew__spotlight");
+  const img = document.getElementById("crewImg");
+  const bar = document.getElementById("crewBar");
+  const campos = {
+    name: document.getElementById("crewName"),
+    role: document.getElementById("crewRole"),
+    detail: document.getElementById("crewDetail"),
+  };
+  const mail = document.getElementById("crewMail");
+  const numero = document.getElementById("crewIndex");
+  const DURACION = 4500;
+  let actual = 0;
+  let inicio = performance.now();
+  let pausado = false;
+
+  const mostrar = (i) => {
+    if (i === actual) return;
+    actual = i;
+    const h = hexes[i];
+    hexes.forEach((x) => x.classList.toggle("is-active", x === h));
+    spot.classList.add("is-changing");
+    img.classList.add("is-changing");
+    setTimeout(() => {
+      img.src = h.querySelector("img").src;
+      img.alt = h.dataset.name;
+      campos.name.textContent = h.dataset.name;
+      campos.role.textContent = h.dataset.role;
+      campos.detail.textContent = h.dataset.detail;
+      mail.hidden = !h.dataset.mail;
+      mail.href = "mailto:" + h.dataset.mail;
+      numero.textContent = String(i + 1).padStart(2, "0");
+      spot.classList.remove("is-changing");
+      img.classList.remove("is-changing");
+    }, 300);
+    inicio = performance.now();
+  };
+
+  hexes.forEach((h, i) => {
+    h.addEventListener("mouseenter", () => mostrar(i));
+    h.addEventListener("focus", () => mostrar(i));
+    h.addEventListener("click", () => mostrar(i));
+  });
+  crew.addEventListener("mouseenter", () => (pausado = true));
+  crew.addEventListener("mouseleave", () => { pausado = false; inicio = performance.now(); });
+
+  if (!reducirMovimiento) {
+    const avanzar = (t) => {
+      if (pausado) {
+        inicio = t;
+      } else {
+        const p = (t - inicio) / DURACION;
+        bar.style.width = Math.min(p, 1) * 100 + "%";
+        if (p >= 1) mostrar((actual + 1) % hexes.length);
+      }
+      requestAnimationFrame(avanzar);
+    };
+    requestAnimationFrame(avanzar);
+  }
+}
+
 // Año actual en el pie de página
 document.getElementById("year").textContent = new Date().getFullYear();
 

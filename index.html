@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.css?v=2">
 </head>
 <body>
 
@@ -178,46 +178,58 @@
         <h2 class="section__title center">Equipo de trabajo</h2>
         <p class="section__subtitle center">Dedicación · Experticia · Conocimiento</p>
         <p class="center narrow">Nuestros asociados, gracias a su experiencia y dedicación, están al frente de la Cooperativa, involucrados en cada uno de los procesos necesarios para llevar a feliz término un proyecto.</p>
-        <div class="team">
-          <a class="member" href="mailto:anyelacardoso@gmail.com">
-            <img src="img/equipo-anyela-cardoso.jpg" alt="Anyela Adriana Cardoso Orozco" loading="lazy">
-            <strong>Anyela Adriana Cardoso Orozco</strong><small>Ingeniera de Sistemas · Representante Legal</small>
-          </a>
-          <a class="member" href="mailto:jjvargashoyos@yahoo.es">
-            <img src="https://static.wixstatic.com/media/027a14_e2ed1366f6fd405bb6ce24b2d7cf6319~mv2.jpg/v1/fit/w_1200,h_1200,q_85/img.jpg" alt="Jhon Jairo Vargas Hoyos" loading="lazy">
-            <strong>Jhon Jairo Vargas Hoyos</strong><small>Ingeniero Agrícola y Civil · Mágister en Ing. Recursos Hidráulicos</small>
-          </a>
-          <a class="member" href="mailto:dianacardoso2000@yahoo.com">
-            <img src="https://static.wixstatic.com/media/027a14_a8f95bedf09742ee949c85bc0c770362~mv2.jpg/v1/fit/w_1200,h_1200,q_85/img.jpg" alt="Diana María Cardoso Orozco" loading="lazy">
-            <strong>Diana María Cardoso Orozco</strong><small>Ingeniera Industrial · Esp. en Gerencia de la Salud Ocupacional</small>
-          </a>
-          <a class="member" href="mailto:abelardosanchez2807@hotmail.com">
-            <img src="https://static.wixstatic.com/media/027a14_67817567b03c4ee2a94b92a2643e9788~mv2.jpg/v1/fit/w_1200,h_1200,q_85/img.jpg" alt="Abelardo Sánchez" loading="lazy">
-            <strong>Abelardo Sánchez</strong><small>Ingeniero Agrícola</small>
-          </a>
-          <a class="member" href="mailto:luisa.vargas0308@gmail.com">
-            <img src="https://static.wixstatic.com/media/027a14_a096672bf51e4880b61c4b37876b4d26~mv2.png/v1/fit/w_1200,h_1200,q_85/img.png" alt="Luisa María Vargas Perdomo" loading="lazy">
-            <strong>Luisa María Vargas Perdomo</strong><small>Ingeniera de Software</small>
-          </a>
-          <a class="member" href="mailto:olgasanchez1965@gmail.com">
-            <img src="https://static.wixstatic.com/media/027a14_54dc76b6d5a348ccbfc058cb740c13b6~mv2.jpg/v1/fit/w_1200,h_1200,q_85/img.jpg" alt="Olga Lucía Sánchez Reyes" loading="lazy">
-            <strong>Olga Lucía Sánchez Reyes</strong><small>Contadora Pública</small>
-          </a>
-          <a class="member" href="mailto:male.sancorte@gmail.com">
-            <img src="https://static.wixstatic.com/media/027a14_27e66b852b3447fa91d68691d610c1b2~mv2.jpg/v1/fit/w_1200,h_1200,q_85/img.jpg" alt="Mayra Alejandra Sánchez Cortés" loading="lazy">
-            <strong>Mayra Alejandra Sánchez Cortés</strong><small>Ingeniera Química</small>
-          </a>
-          <div class="member">
-            <img src="img/equipo-jose-mauricio-cardozo.jpg" alt="José Mauricio Cardozo Orozco" loading="lazy">
-            <strong>José Mauricio Cardozo Orozco</strong><small>Ingeniero Civil · Esp. en Obras de Infraestructura</small>
-          </div>
-          <div class="member">
-            <img src="img/equipo-juan-diego-cardoso.jpg" alt="Juan Diego Cardoso Soto" loading="lazy">
-            <strong>Juan Diego Cardoso Soto</strong><small>Ingeniero Multimedia</small>
-          </div>
-          <div class="member">
-            <img src="img/equipo-juan-pablo-quintero.jpg" alt="Juan Pablo Quintero Cardoso" loading="lazy">
-            <strong>Juan Pablo Quintero Cardoso</strong><small>Abogado</small>
+        <!-- Equipo: panel destacado + panal hexagonal (js/main.js lo hace interactivo) -->
+        <div class="crew">
+          <article class="crew__spotlight" aria-live="polite">
+            <div class="crew__frame">
+              <img class="crew__img" id="crewImg" src="img/equipo-anyela-cardoso.jpg" alt="Anyela Adriana Cardoso Orozco">
+            </div>
+            <div class="crew__info">
+              <p class="crew__index"><span id="crewIndex">01</span> / 10</p>
+              <h3 class="crew__name" id="crewName">Anyela Adriana Cardoso Orozco</h3>
+              <p class="crew__role" id="crewRole">Ingeniera de Sistemas</p>
+              <p class="crew__detail" id="crewDetail">Representante Legal</p>
+              <a class="crew__mail" id="crewMail" href="mailto:anyelacardoso@gmail.com">✉ Escribir</a>
+              <div class="crew__progress"><span id="crewBar"></span></div>
+            </div>
+          </article>
+          <div class="crew__hive">
+            <div class="hive-row">
+              <button class="hex is-active" type="button" data-name="Anyela Adriana Cardoso Orozco" data-role="Ingeniera de Sistemas" data-detail="Representante Legal" data-mail="anyelacardoso@gmail.com" aria-label="Ver a Anyela Adriana Cardoso Orozco">
+                <img src="img/equipo-anyela-cardoso.jpg" alt="Anyela Adriana Cardoso Orozco" loading="lazy">
+              </button>
+              <button class="hex" type="button" data-name="Jhon Jairo Vargas Hoyos" data-role="Ingeniero Agrícola y Civil" data-detail="Esp. en Riego · Mágister en Ing. Recursos Hidráulicos" data-mail="jjvargashoyos@yahoo.es" aria-label="Ver a Jhon Jairo Vargas Hoyos">
+                <img src="https://static.wixstatic.com/media/027a14_e2ed1366f6fd405bb6ce24b2d7cf6319~mv2.jpg/v1/fit/w_800,h_800,q_85/img.jpg" alt="Jhon Jairo Vargas Hoyos" loading="lazy">
+              </button>
+              <button class="hex" type="button" data-name="Diana María Cardoso Orozco" data-role="Ingeniera Industrial" data-detail="Esp. en Gerencia de la Salud Ocupacional" data-mail="dianacardoso2000@yahoo.com" aria-label="Ver a Diana María Cardoso Orozco">
+                <img src="https://static.wixstatic.com/media/027a14_a8f95bedf09742ee949c85bc0c770362~mv2.jpg/v1/fit/w_800,h_800,q_85/img.jpg" alt="Diana María Cardoso Orozco" loading="lazy">
+              </button>
+            </div>
+            <div class="hive-row">
+              <button class="hex" type="button" data-name="José Mauricio Cardozo Orozco" data-role="Ingeniero Civil" data-detail="Esp. en Obras de Infraestructura" data-mail="" aria-label="Ver a José Mauricio Cardozo Orozco">
+                <img src="img/equipo-jose-mauricio-cardozo.jpg" alt="José Mauricio Cardozo Orozco" loading="lazy">
+              </button>
+              <button class="hex" type="button" data-name="Abelardo Sánchez" data-role="Ingeniero Agrícola" data-detail="" data-mail="abelardosanchez2807@hotmail.com" aria-label="Ver a Abelardo Sánchez">
+                <img src="https://static.wixstatic.com/media/027a14_67817567b03c4ee2a94b92a2643e9788~mv2.jpg/v1/fit/w_800,h_800,q_85/img.jpg" alt="Abelardo Sánchez" loading="lazy">
+              </button>
+              <button class="hex" type="button" data-name="Olga Lucía Sánchez Reyes" data-role="Contadora Pública" data-detail="" data-mail="olgasanchez1965@gmail.com" aria-label="Ver a Olga Lucía Sánchez Reyes">
+                <img src="https://static.wixstatic.com/media/027a14_54dc76b6d5a348ccbfc058cb740c13b6~mv2.jpg/v1/fit/w_800,h_800,q_85/img.jpg" alt="Olga Lucía Sánchez Reyes" loading="lazy">
+              </button>
+              <button class="hex" type="button" data-name="Luisa María Vargas Perdomo" data-role="Ingeniera de Software" data-detail="" data-mail="luisa.vargas0308@gmail.com" aria-label="Ver a Luisa María Vargas Perdomo">
+                <img src="https://static.wixstatic.com/media/027a14_a096672bf51e4880b61c4b37876b4d26~mv2.png/v1/fit/w_800,h_800,q_85/img.png" alt="Luisa María Vargas Perdomo" loading="lazy">
+              </button>
+            </div>
+            <div class="hive-row">
+              <button class="hex" type="button" data-name="Mayra Alejandra Sánchez Cortés" data-role="Ingeniera Química" data-detail="" data-mail="male.sancorte@gmail.com" aria-label="Ver a Mayra Alejandra Sánchez Cortés">
+                <img src="https://static.wixstatic.com/media/027a14_27e66b852b3447fa91d68691d610c1b2~mv2.jpg/v1/fit/w_800,h_800,q_85/img.jpg" alt="Mayra Alejandra Sánchez Cortés" loading="lazy">
+              </button>
+              <button class="hex" type="button" data-name="Juan Pablo Quintero Cardoso" data-role="Abogado" data-detail="" data-mail="" aria-label="Ver a Juan Pablo Quintero Cardoso">
+                <img src="img/equipo-juan-pablo-quintero.jpg" alt="Juan Pablo Quintero Cardoso" loading="lazy">
+              </button>
+              <button class="hex" type="button" data-name="Juan Diego Cardoso Soto" data-role="Ingeniero Multimedia" data-detail="" data-mail="" aria-label="Ver a Juan Diego Cardoso Soto">
+                <img src="img/equipo-juan-diego-cardoso.jpg" alt="Juan Diego Cardoso Soto" loading="lazy">
+              </button>
+            </div>
           </div>
         </div>
         <h3 class="team__more-title center">Colaboradores</h3>
@@ -335,6 +347,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="js/main.js?v=2"></script>
 </body>
 </html>

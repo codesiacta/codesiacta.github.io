@@ -148,12 +148,53 @@ h1, h2, h3 { font-family: "Montserrat", sans-serif; line-height: 1.2; color: var
 }
 
 /* ===== Equipo ===== */
-.team { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 28px; margin-top: 48px; }
-.member { text-align: center; text-decoration: none; color: var(--texto); font-weight: 600; }
-.member img { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; margin: 0 auto 12px; border: 4px solid var(--verde-claro); transition: border-color .2s; }
-.member:hover img { border-color: var(--verde); }
-.member strong { display: block; font-size: .95rem; line-height: 1.3; }
-.member small { display: block; color: var(--gris); font-weight: 400; font-size: .8rem; line-height: 1.4; margin-top: 4px; }
+/* Panel destacado + panal hexagonal */
+.crew { display: grid; grid-template-columns: minmax(300px, 1fr) 1.25fr; gap: 56px; align-items: center; margin-top: 48px; }
+
+.crew__spotlight {
+  background: linear-gradient(160deg, var(--azul-oscuro), var(--azul));
+  color: #fff; border-radius: 20px; padding: 28px;
+  box-shadow: 0 24px 48px rgba(15, 37, 96, .28);
+}
+.crew__frame { position: relative; margin: 0 14px 28px 0; }
+.crew__frame::before {
+  content: ""; position: absolute; inset: 14px -14px -14px 14px;
+  border: 3px solid var(--verde); border-radius: 14px;
+}
+.crew__img {
+  position: relative; width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 14px;
+  transition: opacity .35s ease, transform .35s ease;
+}
+.crew__img.is-changing { opacity: 0; transform: scale(.97); }
+.crew__info > * { transition: opacity .35s ease; }
+.crew__spotlight.is-changing .crew__info > :not(.crew__progress) { opacity: 0; }
+.crew__index { font-family: "Montserrat", sans-serif; font-size: .8rem; letter-spacing: 2px; color: #9be3a6; }
+.crew__index span { font-size: 1.1rem; font-weight: 800; }
+.crew__name { color: #fff; font-size: 1.45rem; margin: 6px 0 4px; }
+.crew__role { color: #9be3a6; font-weight: 600; }
+.crew__detail { color: #c9d4ee; font-size: .9rem; margin-top: 2px !important; min-height: 1.5em; }
+.crew__mail {
+  display: inline-block; margin-top: 14px; padding: 8px 18px; border-radius: 999px;
+  border: 2px solid rgba(255,255,255,.5); color: #fff; text-decoration: none; font-weight: 600; font-size: .9rem;
+}
+.crew__mail:hover { background: #fff; color: var(--azul-oscuro); }
+.crew__mail[hidden] { display: none; }
+.crew__progress { height: 3px; background: rgba(255,255,255,.15); border-radius: 2px; margin-top: 22px; overflow: hidden; }
+.crew__progress span { display: block; height: 100%; width: 0; background: var(--verde); }
+
+.crew__hive { --hex-w: 140px; --hex-h: calc(var(--hex-w) * 1.1547); padding: 20px 0; }
+.hive-row { display: flex; justify-content: center; gap: 10px; }
+.hive-row + .hive-row { margin-top: calc(var(--hex-h) * -0.25 + 10px); }
+.hex {
+  width: var(--hex-w); height: var(--hex-h); padding: 4px; border: 0; cursor: pointer;
+  background: #dfe6f1;
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  transition: transform .3s ease, background .3s ease, filter .3s ease;
+  filter: grayscale(.55);
+}
+.hex img { width: 100%; height: 100%; object-fit: cover; clip-path: inherit; display: block; }
+.hex:hover, .hex:focus-visible { transform: scale(1.08); filter: none; background: var(--azul); outline: none; }
+.hex.is-active { background: var(--verde); filter: none; transform: scale(1.1); }
 .team__more-title { margin-top: 56px; font-size: 1.2rem; }
 .team__list { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; margin-top: 20px; }
 .team__list li { background: var(--fondo-alt); border-left: 4px solid var(--verde); border-radius: 8px; padding: 12px 16px; font-size: .88rem; color: var(--gris); }
@@ -204,7 +245,10 @@ h1, h2, h3 { font-family: "Montserrat", sans-serif; line-height: 1.2; color: var
   .nav.open { max-height: 400px; }
   .nav a { padding: 14px; width: 100%; text-align: center; }
   .nav .btn--small { width: auto; margin: 10px 0 16px; }
-  .split, .two-col, .hero__grid { grid-template-columns: 1fr; gap: 32px; }
+  .split, .two-col, .hero__grid, .crew { grid-template-columns: 1fr; gap: 32px; }
+  .crew__hive { --hex-w: min(84px, 22vw); padding: 0; }
+  .hive-row { gap: 6px; }
+  .hive-row + .hive-row { margin-top: calc(var(--hex-h) * -0.25 + 6px); }
   .hero { padding: 48px 0 56px; }
   .section { padding: 64px 0; }
   .brand__text small { display: none; }
