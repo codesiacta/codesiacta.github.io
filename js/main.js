@@ -93,6 +93,22 @@ if (crew) {
   }
 }
 
+// Experiencia: filtrar contratos por línea de servicio
+const tabs = document.querySelectorAll(".xp-tab");
+const contratos = document.querySelectorAll(".xp");
+tabs.forEach((tab) =>
+  tab.addEventListener("click", () => {
+    tabs.forEach((t) => {
+      t.classList.toggle("is-active", t === tab);
+      t.setAttribute("aria-selected", t === tab);
+    });
+    const filtro = tab.dataset.filter;
+    contratos.forEach((c) => {
+      c.hidden = filtro !== "todos" && c.dataset.cat !== filtro;
+    });
+  })
+);
+
 // Año actual en el pie de página
 document.getElementById("year").textContent = new Date().getFullYear();
 

@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=3">
+  <link rel="stylesheet" href="css/styles.css?v=4">
 </head>
 <body>
 
@@ -43,6 +43,7 @@
         <a href="#nosotros">Quiénes somos</a>
         <a href="#servicios">Servicios</a>
         <a href="#proyectos">Proyectos</a>
+        <a href="#experiencia">Experiencia</a>
         <a href="#equipo">Equipo</a>
         <a href="#rte">RTE</a>
         <a href="#contacto" class="btn btn--small">Contacto</a>
@@ -301,19 +302,267 @@
       </div>
     </section>
 
+    <!-- ===== EXPERIENCIA ===== -->
+    <!-- Selección de contratos tomada del Portafolio de Servicios 2026 (docs/portafolio-codesia-2026.pdf) -->
+    <section class="section section--alt" id="experiencia">
+      <div class="container">
+        <h2 class="section__title center">Experiencia certificada</h2>
+        <p class="center narrow">Más de 140 contratos ejecutados en más de 30 años. Esta es una selección por línea de servicio.</p>
+
+        <div class="xp-tabs" role="tablist" aria-label="Filtrar experiencia por línea de servicio">
+          <button class="xp-tab is-active" role="tab" aria-selected="true" data-filter="todos">Todos</button>
+          <button class="xp-tab" role="tab" aria-selected="false" data-filter="edificaciones">Edificaciones</button>
+          <button class="xp-tab" role="tab" aria-selected="false" data-filter="hidraulica">Acueducto y saneamiento</button>
+          <button class="xp-tab" role="tab" aria-selected="false" data-filter="vias">Vías</button>
+          <button class="xp-tab" role="tab" aria-selected="false" data-filter="riego">Distritos de riego</button>
+          <button class="xp-tab" role="tab" aria-selected="false" data-filter="interventoria">Interventoría</button>
+          <button class="xp-tab" role="tab" aria-selected="false" data-filter="ambiental">Ambiental y consultoría</button>
+        </div>
+
+        <div class="xp-grid">
+          <!-- Edificaciones -->
+          <article class="xp" data-cat="edificaciones">
+            <span class="xp__tag">Edificaciones</span>
+            <h3>Construcción de laboratorios de Ciencias Naturales en la I.E. La Argentina, sede Sevilla</h3>
+            <p class="xp__client">Gobernación del Huila</p>
+            <p class="xp__place">San Agustín, Huila</p>
+          </article>
+          <article class="xp" data-cat="edificaciones">
+            <span class="xp__tag">Edificaciones</span>
+            <h3>Remodelación y adecuación de la oficina 103 de la Administración de Impuestos y Aduanas Nacionales</h3>
+            <p class="xp__client">DIAN</p>
+            <p class="xp__place">Neiva, Huila</p>
+          </article>
+          <article class="xp" data-cat="edificaciones">
+            <span class="xp__tag">Edificaciones</span>
+            <h3>Mantenimiento, adecuaciones y reparaciones locativas de la sede regional y los centros zonales Riohacha, Manaure y Maicao</h3>
+            <p class="xp__client">ICBF Regional Guajira</p>
+            <p class="xp__place">La Guajira</p>
+          </article>
+          <article class="xp" data-cat="edificaciones">
+            <span class="xp__tag">Edificaciones</span>
+            <h3>Restaurantes escolares y aulas en instituciones educativas de 9 municipios del Huila y de Mocoa</h3>
+            <p class="xp__client">UTRAHUILCA</p>
+            <p class="xp__place">Huila y Putumayo</p>
+          </article>
+          <article class="xp" data-cat="edificaciones">
+            <span class="xp__tag">Urbanismo</span>
+            <h3>Cerramiento en malla eslabonada y tubo galvanizado de la pista atlética y el campo de fútbol de la sede central</h3>
+            <p class="xp__client">Universidad Surcolombiana</p>
+            <p class="xp__place">Neiva, Huila</p>
+          </article>
+
+          <!-- Acueducto y saneamiento -->
+          <article class="xp" data-cat="hidraulica">
+            <span class="xp__tag">Acueducto</span>
+            <h3>Construcción del Sistema de Acueducto Regional Olivos, Retiro y Recreo, Santa Rosa y Playa Rica</h3>
+            <p class="xp__client">Aguas del Huila S.A. E.S.P.</p>
+            <p class="xp__place">El Pital, Huila</p>
+          </article>
+          <article class="xp" data-cat="hidraulica">
+            <span class="xp__tag">Saneamiento</span>
+            <h3>Construcción de baterías sanitarias, acueductos y alcantarillado sanitario en veredas y centros poblados</h3>
+            <p class="xp__client">Aguas del Huila S.A. E.S.P.</p>
+            <p class="xp__place">La Argentina y La Plata, Huila</p>
+          </article>
+          <article class="xp" data-cat="hidraulica">
+            <span class="xp__tag">Acueducto</span>
+            <h3>Restitución de acueducto en la calle 49 del barrio Cándido Leguízamo</h3>
+            <p class="xp__client">Empresas Públicas de Neiva</p>
+            <p class="xp__place">Neiva, Huila</p>
+          </article>
+          <article class="xp" data-cat="hidraulica">
+            <span class="xp__tag">Alcantarillado</span>
+            <h3>Construcción del alcantarillado de la Planta Embotelladora del Huila</h3>
+            <p class="xp__client">Embotelladora del Huila – Planta Neiva</p>
+            <p class="xp__place">Neiva, Huila</p>
+          </article>
+          <article class="xp" data-cat="hidraulica">
+            <span class="xp__tag">Alcantarillado</span>
+            <h3>Construcción del colector marginal Río Las Ceibas, comuna 10</h3>
+            <p class="xp__client">ASOCOOPH</p>
+            <p class="xp__place">Neiva, Huila</p>
+          </article>
+
+          <!-- Vías -->
+          <article class="xp" data-cat="vias">
+            <span class="xp__tag">Puentes</span>
+            <h3>Construcción a todo costo de puente vehicular sobre la Quebrada La Cabuya, entre los barrios Los Parques y San Carlos</h3>
+            <p class="xp__client">Gobernación del Huila</p>
+            <p class="xp__place">Neiva, Huila</p>
+          </article>
+          <article class="xp" data-cat="vias">
+            <span class="xp__tag">Pavimentos</span>
+            <h3>Construcción de pavimento en concreto rígido en la calle 1A y la carrera 11</h3>
+            <p class="xp__client">Alcaldía de Tesalia</p>
+            <p class="xp__place">Tesalia, Huila</p>
+          </article>
+          <article class="xp" data-cat="vias">
+            <span class="xp__tag">Pavimentos</span>
+            <h3>Construcción de andenes y pavimentación en el barrio El Jardín, comuna 5</h3>
+            <p class="xp__client">Alcaldía de Neiva – Secretaría de Vías e Infraestructura</p>
+            <p class="xp__place">Neiva, Huila</p>
+          </article>
+          <article class="xp" data-cat="vias">
+            <span class="xp__tag">Vías</span>
+            <h3>Construcción de obras de arte en la vía Estoracal – San Jacinto</h3>
+            <p class="xp__client">Comité de Cafeteros del Huila</p>
+            <p class="xp__place">Hobo, Huila</p>
+          </article>
+
+          <!-- Distritos de riego -->
+          <article class="xp" data-cat="riego">
+            <span class="xp__tag">Riego · Obra</span>
+            <h3>Obras civiles e hidráulicas para la rehabilitación del Distrito de Adecuación de Tierras de Pequeña Irrigación</h3>
+            <p class="xp__client">INCODER</p>
+            <p class="xp__place">San Mateo, Boyacá</p>
+          </article>
+          <article class="xp" data-cat="riego">
+            <span class="xp__tag">Riego · Obra</span>
+            <h3>Construcción de los distritos de riego de pequeña escala Satías – Andes Bajo y Pescado – El Rosario</h3>
+            <p class="xp__client">Gobernación del Huila</p>
+            <p class="xp__place">Algeciras y Garzón, Huila</p>
+          </article>
+          <article class="xp" data-cat="riego">
+            <span class="xp__tag">Riego · Diseño</span>
+            <h3>Estudios y diseños definitivos de los distritos de riego Asocriollo, La Gran Vía, Honda Alta, Silvania Pará, El Vergel y Orituguaz – Laguneta</h3>
+            <p class="xp__client">INFIHUILA</p>
+            <p class="xp__place">Pitalito, Gigante, Rivera, Tarqui y Elías, Huila</p>
+          </article>
+          <article class="xp" data-cat="riego">
+            <span class="xp__tag">Riego · Diseño</span>
+            <h3>Estudios y diseños de sistemas de riego por goteo tecnificado para 300 hectáreas de maracuyá</h3>
+            <p class="xp__client">Comercializadora Frutas del Huila</p>
+            <p class="xp__place">Algeciras, Campoalegre y Rivera, Huila</p>
+          </article>
+
+          <!-- Interventoría -->
+          <article class="xp" data-cat="interventoria">
+            <span class="xp__tag">Interventoría</span>
+            <h3>Interventoría para la reconstrucción de la presa derivadora Canal Antioquia, Distrito de Riego de Aracataca</h3>
+            <p class="xp__client">Secretaría Ejecutiva Convenio Andrés Bello – SECAB</p>
+            <p class="xp__place">Aracataca, Magdalena</p>
+          </article>
+          <article class="xp" data-cat="interventoria">
+            <span class="xp__tag">Interventoría</span>
+            <h3>Interventoría para la rehabilitación de los distritos de irrigación Pilú Brisas, Cunira, Espinal y Los Limones</h3>
+            <p class="xp__client">INCODER</p>
+            <p class="xp__place">Tolima y Huila</p>
+          </article>
+          <article class="xp" data-cat="interventoria">
+            <span class="xp__tag">Interventoría</span>
+            <h3>Interventoría para la rehabilitación y ampliación de la calle 19 entre carreras 16 y 52 (K0+000 a K2+000)</h3>
+            <p class="xp__client">Alcaldía de Neiva</p>
+            <p class="xp__place">Neiva, Huila</p>
+          </article>
+          <article class="xp" data-cat="interventoria">
+            <span class="xp__tag">Interventoría</span>
+            <h3>Interventoría a las obras civiles, eléctricas y de urbanismo del proyecto El Jardín de los Olivos (2017 – 2023)</h3>
+            <p class="xp__client">Empresa Cooperativa Funeraria EMCOOFUN</p>
+            <p class="xp__place">Huila</p>
+          </article>
+          <article class="xp" data-cat="interventoria">
+            <span class="xp__tag">Interventoría</span>
+            <h3>Interventoría para la rehabilitación del Distrito de Riego de Mercaderes</h3>
+            <p class="xp__client">Gobernación del Cauca</p>
+            <p class="xp__place">Mercaderes, Cauca</p>
+          </article>
+
+          <!-- Ambiental y consultoría -->
+          <article class="xp" data-cat="ambiental">
+            <span class="xp__tag">Ambiental</span>
+            <h3>Plan de ordenamiento y manejo de la microcuenca del río Yarumo, en un área aproximada de 7.000 hectáreas</h3>
+            <p class="xp__client">CORPOAMAZONIA</p>
+            <p class="xp__place">Orito, Putumayo</p>
+          </article>
+          <article class="xp" data-cat="ambiental">
+            <span class="xp__tag">Ambiental</span>
+            <h3>Estudio de impacto ambiental del relleno sanitario Los Ángeles</h3>
+            <p class="xp__client">Empresas Públicas de Neiva</p>
+            <p class="xp__place">Neiva, Huila</p>
+          </article>
+          <article class="xp" data-cat="ambiental">
+            <span class="xp__tag">Ambiental</span>
+            <h3>Recuperación del cauce del río Neiva: 21.000 m³ de dragado y conformación de muros</h3>
+            <p class="xp__client">Alcaldía de Campoalegre</p>
+            <p class="xp__place">Campoalegre, Huila</p>
+          </article>
+          <article class="xp" data-cat="ambiental">
+            <span class="xp__tag">Ambiental</span>
+            <h3>Obras para el control de erosión visible de la cuenca del río Las Ceibas</h3>
+            <p class="xp__client">Corporación Autónoma Regional del Alto Magdalena – CAM</p>
+            <p class="xp__place">Neiva, Huila</p>
+          </article>
+          <article class="xp" data-cat="ambiental">
+            <span class="xp__tag">Consultoría</span>
+            <h3>Estudios y diseños integrales (suelos, estructurales, hidráulicos, eléctricos y red contra incendio) para la infraestructura física comunitaria</h3>
+            <p class="xp__client">UTRAHUILCA</p>
+            <p class="xp__place">Neiva, Huila</p>
+          </article>
+        </div>
+
+        <p class="center xp-more"><a class="btn" href="docs/portafolio-codesia-2026.pdf" target="_blank" rel="noopener">Ver los +140 contratos en el portafolio</a></p>
+      </div>
+    </section>
+
     <!-- ===== CLIENTES ===== -->
     <section class="section" id="clientes">
       <div class="container">
-        <h2 class="section__title center">Nos han contratado</h2>
+        <h2 class="section__title center">Han contratado con nosotros</h2>
         <p class="center narrow">Nuestros clientes son nuestra carta de presentación.</p>
-        <div class="clients">
-          <img src="img/cliente-gobernacion-huila.jpg" alt="Gobernación del Huila" loading="lazy">
-          <img src="img/cliente-infihuila.jpg" alt="INFIHUILA" loading="lazy">
-          <img src="img/cliente-utrahuilca.jpg" alt="UTRAHUILCA" loading="lazy">
-          <img src="img/cliente-fundautrahuilca.jpg" alt="FUNDAUTRAHUILCA" loading="lazy">
-          <img src="img/cliente-asocooph.jpg" alt="ASOCOOPH" loading="lazy">
-          <img src="img/cliente-fam.jpg" alt="FAM" loading="lazy">
-          <img src="img/cliente-los-olivos.png" alt="Los Olivos" loading="lazy">
+      </div>
+      <div class="marquee" aria-label="Entidades que han contratado con CODESIA C.T.A.">
+        <div class="marquee__track">
+          <img src="img/clientes/gobernacion-huila.jpg" alt="Gobernación del Huila" loading="lazy">
+          <img src="img/clientes/alcaldia-neiva.jpg" alt="Alcaldía de Neiva" loading="lazy">
+          <img src="img/clientes/dian.jpg" alt="DIAN" loading="lazy">
+          <img src="img/clientes/icbf.jpg" alt="Instituto Colombiano de Bienestar Familiar" loading="lazy">
+          <img src="img/clientes/universidad-surcolombiana.jpg" alt="Universidad Surcolombiana" loading="lazy">
+          <img src="img/clientes/aguas-del-huila.jpg" alt="Aguas del Huila" loading="lazy">
+          <img src="img/clientes/electrohuila.jpg" alt="ElectroHuila" loading="lazy">
+          <img src="img/clientes/infihuila.jpg" alt="INFIHUILA" loading="lazy">
+          <img src="img/clientes/cam.jpg" alt="Corporación Autónoma Regional del Alto Magdalena - CAM" loading="lazy">
+          <img src="img/clientes/corpoamazonia.jpg" alt="CORPOAMAZONIA" loading="lazy">
+          <img src="img/clientes/gobernacion-cauca.jpg" alt="Gobernación del Cauca" loading="lazy">
+        </div>
+        <div class="marquee__track" aria-hidden="true">
+          <img src="img/clientes/gobernacion-huila.jpg" alt="" loading="lazy">
+          <img src="img/clientes/alcaldia-neiva.jpg" alt="" loading="lazy">
+          <img src="img/clientes/dian.jpg" alt="" loading="lazy">
+          <img src="img/clientes/icbf.jpg" alt="" loading="lazy">
+          <img src="img/clientes/universidad-surcolombiana.jpg" alt="" loading="lazy">
+          <img src="img/clientes/aguas-del-huila.jpg" alt="" loading="lazy">
+          <img src="img/clientes/electrohuila.jpg" alt="" loading="lazy">
+          <img src="img/clientes/infihuila.jpg" alt="" loading="lazy">
+          <img src="img/clientes/cam.jpg" alt="" loading="lazy">
+          <img src="img/clientes/corpoamazonia.jpg" alt="" loading="lazy">
+          <img src="img/clientes/gobernacion-cauca.jpg" alt="" loading="lazy">
+        </div>
+      </div>
+      <div class="marquee marquee--reverse" aria-label="Más entidades que han contratado con CODESIA C.T.A.">
+        <div class="marquee__track">
+          <img src="img/clientes/las-ceibas-epn.jpg" alt="Las Ceibas – Empresas Públicas de Neiva" loading="lazy">
+          <img src="img/clientes/utrahuilca.jpg" alt="UTRAHUILCA" loading="lazy">
+          <img src="img/clientes/fundautrahuilca.jpg" alt="Fundación Social UTRAHUILCA" loading="lazy">
+          <img src="img/clientes/asocooph.jpg" alt="ASOCOOPH" loading="lazy">
+          <img src="img/clientes/fundacion-alto-magdalena.jpg" alt="Fundación del Alto Magdalena" loading="lazy">
+          <img src="img/clientes/alcaldia-andalucia.jpg" alt="Alcaldía Municipal de Andalucía" loading="lazy">
+          <img src="img/clientes/alcaldia-yaguara.jpg" alt="Alcaldía de Yaguará" loading="lazy">
+          <img src="img/clientes/alcaldia-campoalegre.jpg" alt="Alcaldía de Campoalegre" loading="lazy">
+          <img src="img/clientes/alcaldia-tesalia.jpg" alt="Alcaldía Municipal de Tesalia" loading="lazy">
+          <img src="img/clientes/los-olivos.jpg" alt="Los Olivos" loading="lazy">
+        </div>
+        <div class="marquee__track" aria-hidden="true">
+          <img src="img/clientes/las-ceibas-epn.jpg" alt="" loading="lazy">
+          <img src="img/clientes/utrahuilca.jpg" alt="" loading="lazy">
+          <img src="img/clientes/fundautrahuilca.jpg" alt="" loading="lazy">
+          <img src="img/clientes/asocooph.jpg" alt="" loading="lazy">
+          <img src="img/clientes/fundacion-alto-magdalena.jpg" alt="" loading="lazy">
+          <img src="img/clientes/alcaldia-andalucia.jpg" alt="" loading="lazy">
+          <img src="img/clientes/alcaldia-yaguara.jpg" alt="" loading="lazy">
+          <img src="img/clientes/alcaldia-campoalegre.jpg" alt="" loading="lazy">
+          <img src="img/clientes/alcaldia-tesalia.jpg" alt="" loading="lazy">
+          <img src="img/clientes/los-olivos.jpg" alt="" loading="lazy">
         </div>
       </div>
     </section>
@@ -393,6 +642,6 @@
     <span>¿Hablamos?</span>
   </a>
 
-  <script src="js/main.js?v=3"></script>
+  <script src="js/main.js?v=4"></script>
 </body>
 </html>

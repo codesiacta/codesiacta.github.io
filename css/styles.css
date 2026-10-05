@@ -210,10 +210,56 @@ h1, h2, h3 { font-family: "Montserrat", sans-serif; line-height: 1.2; color: var
 .doc:hover { background: var(--azul); color: #fff; }
 .doc--disabled { opacity: .45; pointer-events: none; }
 
-/* ===== Clientes ===== */
-.clients { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 24px; margin-top: 40px; align-items: center; }
-.clients img { max-height: 90px; width: auto; margin: auto; object-fit: contain; filter: grayscale(.6); transition: filter .2s; }
-.clients img:hover { filter: none; }
+/* ===== Experiencia ===== */
+.xp-tabs { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 32px; }
+.xp-tab {
+  font: inherit; font-size: .88rem; font-weight: 600; cursor: pointer;
+  padding: 8px 18px; border-radius: 999px;
+  border: 1.5px solid #cfd8e6; background: #fff; color: var(--azul-oscuro);
+  transition: background .2s, color .2s, border-color .2s;
+}
+.xp-tab:hover { border-color: var(--azul); }
+.xp-tab.is-active { background: var(--azul-oscuro); border-color: var(--azul-oscuro); color: #fff; }
+.xp-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 18px; margin-top: 32px; }
+.xp {
+  background: #fff; border-radius: var(--radio); padding: 20px 22px 18px;
+  border-left: 4px solid var(--verde); box-shadow: 0 6px 18px rgba(15,37,96,.07);
+  display: flex; flex-direction: column; gap: 8px;
+  animation: xpIn .35s ease both;
+}
+.xp[hidden] { display: none; }
+.xp__tag { align-self: flex-start; font-size: .7rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--verde); background: var(--verde-claro); padding: 3px 10px; border-radius: 999px; }
+.xp h3 { font-size: .98rem; line-height: 1.4; color: var(--azul-oscuro); flex: 1; }
+.xp__client { font-weight: 700; font-size: .88rem; color: var(--texto); padding-top: 10px; border-top: 1px solid #edf1f6; }
+.xp__client::before { content: "Contratante · "; font-weight: 400; color: var(--gris); }
+.xp__place { font-size: .84rem; color: var(--gris); margin-top: 0 !important; }
+.xp__place::before { content: "📍 "; }
+.xp-more { margin-top: 36px; }
+@keyframes xpIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+/* ===== Clientes: cintas de logos en movimiento ===== */
+.marquee {
+  display: flex; overflow: hidden; margin-top: 28px;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+          mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.marquee + .marquee { margin-top: 18px; }
+.marquee__track { display: flex; align-items: center; gap: 22px; padding-right: 22px; flex-shrink: 0; animation: marquee 50s linear infinite; }
+.marquee--reverse .marquee__track { animation-direction: reverse; animation-duration: 56s; }
+.marquee:hover .marquee__track { animation-play-state: paused; }
+.marquee img {
+  height: 84px; width: auto; max-width: 230px; object-fit: contain;
+  background: #fff; border: 1px solid #e8edf4; border-radius: 12px; padding: 12px 18px;
+  filter: grayscale(.35); transition: filter .2s, transform .2s;
+}
+.marquee img:hover { filter: none; transform: translateY(-3px); }
+@keyframes marquee { to { transform: translateX(-100%); } }
+@media (prefers-reduced-motion: reduce) {
+  .marquee { flex-wrap: wrap; justify-content: center; -webkit-mask-image: none; mask-image: none; }
+  .marquee__track { animation: none; flex-wrap: wrap; justify-content: center; }
+  .marquee__track[aria-hidden="true"] { display: none; }
+  .xp { animation: none; }
+}
 
 /* ===== Contacto ===== */
 .contact-list { list-style: none; margin-top: 24px; }
@@ -257,6 +303,9 @@ h1, h2, h3 { font-family: "Montserrat", sans-serif; line-height: 1.2; color: var
 @media (max-width: 600px) {
   .wa-float { padding: 14px; right: 16px; bottom: 16px; }
   .wa-float span { display: none; }
+  .marquee img { height: 64px; padding: 8px 12px; }
+  .xp-grid { grid-template-columns: 1fr; }
+  .xp-tab { font-size: .8rem; padding: 7px 14px; }
 }
 
 /* ===== Responsive ===== */
