@@ -28,5 +28,5 @@ git push
 
 - Las fotos de obras (`img/`) salen del Portafolio 2026 y los PDF del RTE están en `docs/`.
 - El logo, las fotos del equipo y los logos de clientes todavía se cargan desde Wix. Conviene descargarlos a `img/` antes de cancelar Wix.
-- Documentos RTE vigencia 2025 publicados. Falta la distribución de excedentes 2025 (sigue la de 2024).
+- Documentos RTE vigencia 2025 publicados.
 - Las fotos del portafolio son de baja resolución (300–900 px). Si existen los originales, reemplazarlos en `img/` con el mismo nombre.
