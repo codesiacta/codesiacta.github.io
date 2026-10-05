@@ -26,7 +26,8 @@ git push
 
 ## Pendientes
 
-- Las fotos de obras (`img/`) salen del Portafolio 2026 y los PDF del RTE están en `docs/`.
-- El logo, las fotos del equipo y los logos de clientes todavía se cargan desde Wix. Conviene descargarlos a `img/` antes de cancelar Wix.
-- Documentos RTE vigencia 2025 publicados.
-- Las fotos del portafolio son de baja resolución (300–900 px). Si existen los originales, reemplazarlos en `img/` con el mismo nombre.
+- Todas las imágenes y PDF están en `img/` y `docs/` (ya no depende de Wix).
+- `politica-de-datos.html`: política de datos (Ley 1581 de 2012). Conviene que la revise un abogado.
+- Faltan para el pie de página: número de inscripción en el RUP y matrícula de Cámara de Comercio.
+- La foto de Jhon Jairo es de muy baja resolución (74 px): conviene reemplazar `img/equipo-jhon-jairo-vargas.jpg`.
+- `img/compartir.jpg` es la imagen que aparece al compartir el link (1200x630).

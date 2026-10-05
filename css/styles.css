@@ -227,11 +227,37 @@ h1, h2, h3 { font-family: "Montserrat", sans-serif; line-height: 1.2; color: var
 .form__note { font-size: .8rem; color: var(--gris); }
 .form__ok { background: var(--verde-claro); color: #1f6b2a; border-radius: 8px; padding: 12px 14px; font-weight: 600; }
 .form__honey { position: absolute; left: -9999px; }
+.form__check { display: flex !important; grid-template-columns: none; align-items: flex-start; gap: 10px !important; font-weight: 400 !important; font-size: .82rem !important; color: var(--gris); line-height: 1.5; }
+.form__check input { width: 18px; height: 18px; margin-top: 2px; flex-shrink: 0; accent-color: var(--verde); }
 
 /* ===== Pie ===== */
-.footer { background: #0a1a45; color: #b9c3dc; padding: 28px 0; font-size: .9rem; }
+.footer { background: #0a1a45; color: #b9c3dc; padding: 56px 0 0; font-size: .88rem; }
 .footer a { color: #fff; }
 .footer__inner { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+.footer__grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 40px; padding-bottom: 36px; }
+.footer h4 { color: #fff; font-family: "Montserrat", sans-serif; font-size: .95rem; margin-bottom: 14px; }
+.footer ul { list-style: none; display: grid; gap: 8px; }
+.footer strong { color: #e3e8f4; }
+.footer__logo { background: #fff; border-radius: 10px; padding: 6px; width: 64px; height: auto; margin-bottom: 14px; }
+.footer__legal-name { line-height: 1.5; }
+.footer__motto { color: #9be3a6; font-style: italic; margin-top: 8px; }
+.footer__bottom { border-top: 1px solid rgba(255,255,255,.1); padding: 18px 0; font-size: .8rem; }
+
+/* ===== WhatsApp flotante ===== */
+.wa-float {
+  position: fixed; right: 20px; bottom: 20px; z-index: 200;
+  display: flex; align-items: center; gap: 8px;
+  background: #25d366; color: #fff; text-decoration: none; font-weight: 700;
+  padding: 12px 18px 12px 14px; border-radius: 999px;
+  box-shadow: 0 10px 24px rgba(0,0,0,.25);
+  transition: transform .2s;
+}
+.wa-float:hover { transform: translateY(-3px); }
+.wa-float svg { width: 26px; height: 26px; }
+@media (max-width: 600px) {
+  .wa-float { padding: 14px; right: 16px; bottom: 16px; }
+  .wa-float span { display: none; }
+}
 
 /* ===== Responsive ===== */
 @media (max-width: 860px) {
@@ -245,7 +271,7 @@ h1, h2, h3 { font-family: "Montserrat", sans-serif; line-height: 1.2; color: var
   .nav.open { max-height: 400px; }
   .nav a { padding: 14px; width: 100%; text-align: center; }
   .nav .btn--small { width: auto; margin: 10px 0 16px; }
-  .split, .two-col, .hero__grid, .crew { grid-template-columns: 1fr; gap: 32px; }
+  .split, .two-col, .hero__grid, .crew, .footer__grid { grid-template-columns: 1fr; gap: 32px; }
   .crew__hive { --hex-w: min(84px, 22vw); padding: 0; }
   .hive-row { gap: 6px; }
   .hive-row + .hive-row { margin-top: calc(var(--hex-h) * -0.25 + 6px); }
