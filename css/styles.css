@@ -213,7 +213,7 @@ h1, h2, h3 { font-family: "Montserrat", sans-serif; line-height: 1.2; color: var
 .crew__progress { height: 3px; background: rgba(255,255,255,.15); border-radius: 2px; margin-top: 22px; overflow: hidden; }
 .crew__progress span { display: block; height: 100%; width: 0; background: var(--verde); }
 
-.crew__hive { --hex-w: 140px; --hex-h: calc(var(--hex-w) * 1.1547); padding: 20px 0; }
+.crew__hive { --hex-w: min(140px, 10.5vw); --hex-h: calc(var(--hex-w) * 1.1547); padding: 20px 0; }
 .hive-row { display: flex; justify-content: center; gap: 10px; }
 .hive-row + .hive-row { margin-top: calc(var(--hex-h) * -0.25 + 10px); }
 .hex {
@@ -278,6 +278,28 @@ h1, h2, h3 { font-family: "Montserrat", sans-serif; line-height: 1.2; color: var
 .xp__place::before { content: "📍 "; }
 .xp-more { margin-top: 36px; }
 @keyframes xpIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+/* ===== Presencia en Colombia (mapa) ===== */
+.mapa { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+.mapa__figure { margin: 0; }
+.mapa__svg { width: 100%; max-width: 440px; height: auto; display: block; margin-inline: auto; }
+.dpto { fill: #233c78; stroke: #0f2560; stroke-width: .8; stroke-linejoin: round; }
+.dpto--on { fill: #2e9e3e; cursor: pointer; transition: fill .2s; }
+.dpto--on:hover, .dpto--on:focus, .dpto--on.is-active { fill: #9be3a6; outline: none; }
+.dpto--home { fill: #3fbf52; }
+.mapa__panel {
+  margin-top: 24px; padding: 18px 20px; border-radius: var(--radio);
+  background: rgba(255,255,255,.07); border-left: 4px solid var(--verde);
+  min-height: 112px;
+}
+.mapa__panel strong { font-family: "Montserrat", sans-serif; color: #fff; font-size: 1.15rem; }
+.mapa__panel p { margin-top: 6px !important; font-size: .92rem; }
+.mapa__lista { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.mapa__lista button {
+  font: inherit; font-size: .8rem; cursor: pointer; color: #dfe6f5;
+  background: transparent; border: 1px solid rgba(255,255,255,.25); border-radius: 999px; padding: 5px 12px;
+}
+.mapa__lista button:hover, .mapa__lista button.is-active { background: var(--verde); border-color: var(--verde); color: #fff; }
 
 /* ===== Clientes: cintas de logos en movimiento ===== */
 .marquee {
@@ -362,7 +384,8 @@ h1, h2, h3 { font-family: "Montserrat", sans-serif; line-height: 1.2; color: var
   .nav.open { max-height: 400px; }
   .nav a { padding: 14px; width: 100%; text-align: center; }
   .nav .btn--small { width: auto; margin: 10px 0 16px; }
-  .split, .two-col, .hero__grid, .crew, .footer__grid { grid-template-columns: 1fr; gap: 32px; }
+  .split, .two-col, .hero__grid, .crew, .footer__grid, .mapa { grid-template-columns: 1fr; gap: 32px; }
+  .mapa__svg { max-width: 340px; }
   .crew__hive { --hex-w: min(84px, 22vw); padding: 0; }
   .hive-row { gap: 6px; }
   .hive-row + .hive-row { margin-top: calc(var(--hex-h) * -0.25 + 6px); }

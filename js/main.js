@@ -100,16 +100,13 @@ if (crew) {
   }
 }
 
-// Galería: abrir la foto en grande con su línea de servicio y enlace al portafolio
+// Galería: abrir la foto en grande con su nombre
 const lightbox = document.getElementById("lightbox");
 const fotos = [...document.querySelectorAll(".gallery figure")];
 if (lightbox && fotos.length) {
   const lb = {
     img: document.getElementById("lbImg"),
     title: document.getElementById("lbTitle"),
-    line: document.getElementById("lbLine"),
-    link: document.getElementById("lbLink"),
-    count: document.getElementById("lbCount"),
   };
   let foto = 0;
   const abrir = (i) => {
@@ -119,9 +116,6 @@ if (lightbox && fotos.length) {
     lb.img.src = im.src;
     lb.img.alt = im.alt;
     lb.title.textContent = f.querySelector("figcaption").textContent;
-    lb.line.textContent = f.dataset.line;
-    lb.link.href = "docs/portafolio-codesia-2026.pdf#page=" + f.dataset.page;
-    lb.count.textContent = `Foto ${foto + 1} de ${fotos.length}`;
     if (!lightbox.open) lightbox.showModal();
   };
   fotos.forEach((f, i) => {
@@ -139,6 +133,42 @@ if (lightbox && fotos.length) {
   });
   // cerrar al hacer clic en el fondo oscuro
   lightbox.addEventListener("click", (e) => { if (e.target === lightbox) lightbox.close(); });
+}
+
+// Mapa de presencia: al pasar o tocar un departamento se muestra dónde hemos trabajado
+const dptos = [...document.querySelectorAll(".dpto--on")];
+if (dptos.length) {
+  const nombre = document.getElementById("mapaNombre");
+  const info = document.getElementById("mapaInfo");
+  const lista = document.getElementById("mapaLista");
+  const botones = [];
+  const elegir = (d) => {
+    dptos.forEach((x) => x.classList.toggle("is-active", x === d));
+    botones.forEach((b) => b.classList.toggle("is-active", b.dpto === d));
+    nombre.textContent = d.dataset.name;
+    info.textContent = d.dataset.info;
+  };
+  dptos
+    .slice()
+    .sort((a, b) => a.dataset.name.localeCompare(b.dataset.name, "es"))
+    .forEach((d) => {
+      const li = document.createElement("li");
+      const b = document.createElement("button");
+      b.type = "button";
+      b.textContent = d.dataset.name;
+      b.dpto = d;
+      b.addEventListener("mouseenter", () => elegir(d));
+      b.addEventListener("click", () => elegir(d));
+      botones.push(b);
+      li.appendChild(b);
+      lista.appendChild(li);
+    });
+  dptos.forEach((d) => {
+    d.addEventListener("mouseenter", () => elegir(d));
+    d.addEventListener("focus", () => elegir(d));
+    d.addEventListener("click", () => elegir(d));
+  });
+  elegir(dptos.find((d) => d.classList.contains("dpto--home")) || dptos[0]);
 }
 
 // Experiencia: filtrar contratos por línea de servicio
