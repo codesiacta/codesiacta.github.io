@@ -211,6 +211,17 @@ h1, h2, h3 { font-family: "Montserrat", sans-serif; line-height: 1.2; color: var
 .doc--disabled { opacity: .45; pointer-events: none; }
 
 /* ===== Experiencia ===== */
+.rup {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+  margin-top: 32px; border-radius: var(--radio); overflow: hidden;
+  background: rgba(255,255,255,.12);
+  box-shadow: 0 16px 36px rgba(15,37,96,.18);
+}
+.rup__stat { background: linear-gradient(160deg, var(--azul-oscuro), var(--azul)); color: #dfe6f5; padding: 22px 18px; text-align: center; }
+.rup__stat strong { display: block; font-family: "Montserrat", sans-serif; font-size: 2rem; color: #9be3a6; line-height: 1.1; }
+.rup__stat span { font-size: .85rem; }
+.rup__note { grid-column: 1 / -1; background: var(--azul-oscuro); color: #b9c3dc; font-size: .8rem; text-align: center; padding: 10px 16px; }
+@media (max-width: 700px) { .rup { grid-template-columns: repeat(2, 1fr); } .rup__stat strong { font-size: 1.6rem; } }
 .xp-tabs { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 32px; }
 .xp-tab {
   font: inherit; font-size: .88rem; font-weight: 600; cursor: pointer;
