@@ -147,6 +147,37 @@ h1, h2, h3 { font-family: "Montserrat", sans-serif; line-height: 1.2; color: var
   background: linear-gradient(transparent, rgba(10,26,69,.85));
 }
 
+.gallery figure { cursor: zoom-in; }
+.gallery figure:focus-visible { outline: 3px solid var(--verde); outline-offset: 3px; }
+
+/* ===== Visor de fotos ===== */
+.lightbox {
+  border: 0; padding: 0; background: transparent; max-width: none; max-height: none;
+  width: 100vw; height: 100vh; margin: 0;
+}
+.lightbox[open] { display: flex; align-items: center; justify-content: center; gap: 12px; }
+.lightbox::backdrop { background: rgba(6, 16, 44, .9); }
+.lightbox__figure { background: #fff; border-radius: var(--radio); overflow: hidden; max-width: min(860px, 86vw); box-shadow: 0 30px 60px rgba(0,0,0,.4); }
+.lightbox__figure img { display: block; width: 100%; max-height: 68vh; object-fit: contain; background: #0a1a45; }
+.lightbox__figure figcaption { display: grid; gap: 4px; padding: 16px 20px 18px; }
+.lightbox__figure strong { font-family: "Montserrat", sans-serif; color: var(--azul-oscuro); font-size: 1.1rem; }
+.lightbox__figure span { color: var(--gris); font-size: .9rem; }
+.lightbox__figure a { font-weight: 700; font-size: .88rem; text-decoration: none; margin-top: 4px; }
+.lightbox__figure small { color: var(--gris); font-size: .78rem; }
+.lightbox__close, .lightbox__nav {
+  border: 0; cursor: pointer; color: #fff; background: rgba(255,255,255,.12);
+  font-size: 2rem; line-height: 1; border-radius: 50%; width: 52px; height: 52px; flex-shrink: 0;
+  transition: background .2s;
+}
+.lightbox__close:hover, .lightbox__nav:hover { background: var(--verde); }
+.lightbox__close { position: fixed; top: 18px; right: 18px; }
+@media (max-width: 700px) {
+  .lightbox__nav { position: fixed; bottom: 18px; width: 46px; height: 46px; }
+  .lightbox__nav--prev { left: 18px; }
+  .lightbox__nav--next { right: 18px; }
+  .lightbox__figure { max-width: 92vw; }
+}
+
 /* ===== Equipo ===== */
 /* Panel destacado + panal hexagonal */
 .crew { display: grid; grid-template-columns: minmax(300px, 1fr) 1.25fr; gap: 56px; align-items: center; margin-top: 48px; }
