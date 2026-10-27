@@ -61,8 +61,11 @@ h1, h2, h3 { font-family: "Montserrat", sans-serif; line-height: 1.2; color: var
 .brand__text small { color: var(--verde); font-size: .78rem; }
 
 .nav { display: flex; align-items: center; gap: 24px; }
-.nav a { text-decoration: none; color: var(--texto); font-weight: 600; font-size: .95rem; }
+.nav a { text-decoration: none; color: var(--texto); font-weight: 600; font-size: .95rem; white-space: nowrap; }
+@media (max-width: 1240px) { .nav { gap: 16px; } .nav a { font-size: .9rem; } }
 .nav a:hover { color: var(--verde); }
+.nav .nav__cifras { color: var(--verde); }
+.nav .nav__cifras:hover { color: var(--azul); }
 
 .nav-toggle { display: none; background: none; border: 0; cursor: pointer; padding: 8px; }
 .nav-toggle span { display: block; width: 26px; height: 3px; background: var(--azul); margin: 5px 0; border-radius: 2px; transition: .3s; }
@@ -373,7 +376,8 @@ h1, h2, h3 { font-family: "Montserrat", sans-serif; line-height: 1.2; color: var
 }
 
 /* ===== Responsive ===== */
-@media (max-width: 860px) {
+/* El menú completo no cabe junto al logo por debajo de ~1100px: pasa a hamburguesa */
+@media (max-width: 1100px) {
   .nav-toggle { display: block; }
   .nav {
     position: absolute; top: 72px; left: 0; right: 0;
@@ -381,9 +385,11 @@ h1, h2, h3 { font-family: "Montserrat", sans-serif; line-height: 1.2; color: var
     box-shadow: 0 8px 16px rgba(0,0,0,.08);
     max-height: 0; overflow: hidden; transition: max-height .3s;
   }
-  .nav.open { max-height: 400px; }
-  .nav a { padding: 14px; width: 100%; text-align: center; }
+  .nav.open { max-height: 640px; }
+  .nav a { padding: 14px; width: 100%; text-align: center; font-size: .95rem; }
   .nav .btn--small { width: auto; margin: 10px 0 16px; }
+}
+@media (max-width: 860px) {
   .split, .two-col, .hero__grid, .crew, .footer__grid, .mapa { grid-template-columns: 1fr; gap: 32px; }
   .mapa__svg { max-width: 340px; }
   .crew__hive { --hex-w: min(84px, 22vw); padding: 0; }
